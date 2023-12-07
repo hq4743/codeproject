@@ -3,9 +3,13 @@ import os
 
 
 def get_data(file_name: str) -> pd.DataFrame:
-    current_directory = os.getcwd()  # Use the current working directory
-    data_path = os.path.join(current_directory, file_name)
-    return pd.read_csv(data_path)
+    #current_directory = os.getcwd()  # Use the current working directory
+    #data_path = os.path.join(current_directory, file_name)
+    #return pd.read_csv(data_path)
+    # Load the dataset
+    url = 'https://storage.googleapis.com/mbcc/datasets/us_chronic_disease_indicators.csv'
+    df = pd.read_csv(url)
+    return df
 
 
 def remove_irrelevant_rows(df: pd.DataFrame, column: str, value: str) -> pd.DataFrame:
